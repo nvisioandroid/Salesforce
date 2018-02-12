@@ -12,9 +12,11 @@
     <string name="end_workday_btn">End Workday</string>
 
     <string name="task_status_on_going">OnGoing</string>
-    <string name="task_status_saved">Saved</string>
+    <string name="task_status_done_but_not_saved">DoneButNotSaved</string>
     <string name="task_status_initial">OnTask</string>
-
+    <string name="task_button_finish_text">Finish</string>
+    <string name="task_button_start_text">Start</string>
+    <string name="task_button_save_text">Save</string>
     <!--Intent Data Pass Keys -->
     <string name="LatitudeOfStartLocation">startLatitude</string>
     <string name="LongitudeOfStartLocation">startLongitude</string>
@@ -54,6 +56,9 @@
     <string name="pref_loginInfoObject">LoginInfoObject</string>
     <string name="pref_startWorkday">startWorkday</string>
     <string name="pref_taskObject">TaskData</string>
+    <string name="pref_task">Task</string>
+    <string name="pref_initialLocation">InitialPosition</string>
+    <string name="pref_permission">Permission</string>
 
 
 

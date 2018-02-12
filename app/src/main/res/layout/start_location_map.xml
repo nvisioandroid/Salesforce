@@ -24,18 +24,32 @@
         tools:context="boommba.apps.prototype.draggablemapviewandroid.MapsActivity" />
 
 
-
-    <TextView
-        android:id="@+id/dragg_result"
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:gravity="center_horizontal"
-        android:padding="20dp"
-        android:text="Please drag map to your address.."
-        android:textColor="#ffffff"
-        android:textSize="18dp" />
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/dragg_result"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Please drag map to your address.."
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@color/colorAccent"
+            android:text="DONE"
+            android:textColor="@color/white"
+            android:onClick="DoneClicked"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+
 
 
 </RelativeLayout>

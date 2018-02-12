@@ -9,6 +9,9 @@ import android.location.LocationManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Base64;
 
+import com.salesforce.nvisio.salesforce.Model.TaskData;
+import com.salesforce.nvisio.salesforce.database.TaskDataDatabase;
+
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
@@ -43,6 +46,18 @@ public class UtilityClass {
             return BitmapFactory.decodeByteArray(b, 0, b.length);
         }
         return null;
+    }
+
+    public TaskDataDatabase convertTaskToTaskDatabase(TaskData taskData){
+        TaskDataDatabase taskDataDatabase=new TaskDataDatabase();
+        taskDataDatabase.setTask(taskData.getTask());
+        taskDataDatabase.setSubTask(taskData.getSubTask());
+        taskDataDatabase.setPerformDate(taskData.getPerformedDate());
+        taskDataDatabase.setStartTime(taskData.getStartTime());
+        taskDataDatabase.setEndTime(taskData.getFinishTime());
+        taskDataDatabase.setDuration(taskData.getDurationInString());
+        taskDataDatabase.setDurationInMins(taskData.getDurationInMIn());
+        return taskDataDatabase;
     }
 
 

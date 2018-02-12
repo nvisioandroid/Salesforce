@@ -25,33 +25,5 @@
         android:layout_marginTop="25dp">
 
     </android.support.v7.widget.RecyclerView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/run">
-
-        <Button
-            android:id="@+id/running"
-            android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/stop"
-            android:layout_gravity="bottom"
-            android:layout_centerHorizontal="true"
-            android:layout_marginRight="40dp"
-            android:text="On-going Job"
-            android:textSize="10sp"
-            android:textColor="@color/white"
-            android:visibility="visible"
-            />
-
-    </RelativeLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@id/run"/>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

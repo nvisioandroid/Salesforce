@@ -38,10 +38,16 @@ public class FirebaseReferenceUtils {
     }
 
 
-    public DatabaseReference getDailyTask(String date){
+    public DatabaseReference getIndividualDailyTask(String date){
         DatabaseReference dailyTask=root.child(context.getResources().getString(R.string.firebase_srDailyTask));
         return dailyTask.child(date);
     }
+
+    public DatabaseReference getDailyTaskRootRef(String userId,String date){
+        DatabaseReference databaseReference=root.child(context.getResources().getString(R.string.firebase_srDailyTask));
+        return databaseReference.child(userId).child(date);
+    }
+
 
     public DatabaseReference getSRListRef(){
         return root.child(context.getResources().getString(R.string.firebase_SrList));
@@ -65,8 +71,12 @@ public class FirebaseReferenceUtils {
         return appointmentRef.child(userId);
     }
 
-    public DatabaseReference getDailyLogRef(){
+    public DatabaseReference getRootDailyLogRef(){
         return root.child(context.getResources().getString(R.string.firebase_srDailyLog));
+    }
+
+    public DatabaseReference getIndividualDailyLogRef(String userId){
+        return root.child(context.getResources().getString(R.string.firebase_srDailyLog)).child(userId);
     }
 
 

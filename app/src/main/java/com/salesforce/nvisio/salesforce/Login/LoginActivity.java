@@ -3,7 +3,6 @@ package com.salesforce.nvisio.salesforce.Login;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,7 +42,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.salesforce.nvisio.salesforce.MainActivity;
-import com.salesforce.nvisio.salesforce.MapActivity;
+import com.salesforce.nvisio.salesforce.ui.MapActivity;
 import com.salesforce.nvisio.salesforce.R;
 import com.salesforce.nvisio.salesforce.Utils;
 import com.salesforce.nvisio.salesforce.service.GPSService;
@@ -51,16 +50,9 @@ import com.salesforce.nvisio.salesforce.ui.CreateLocationActivity;
 
 import com.salesforce.nvisio.salesforce.utils.PermissionUtils;
 
-import net.danlew.android.joda.DateUtils;
 import net.danlew.android.joda.JodaTimeAndroid;
 import java.io.ByteArrayOutputStream;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 
 import de.hdodenhof.circleimageview.CircleImageView;

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.salesforce.nvisio.salesforce.Model.login_data;
 import com.salesforce.nvisio.salesforce.R;
+import com.salesforce.nvisio.salesforce.database.WorkdayData;
 
 import java.util.List;
 
@@ -19,11 +20,11 @@ import java.util.List;
 
 public class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
 
-    private List<login_data> listData;
+    private List<WorkdayData> listData;
     private LayoutInflater inflater;
     private Context context;
 
-    public LogAdapter(List<login_data> listData, Context context) {
+    public LogAdapter(List<WorkdayData> listData, Context context) {
         this.listData = listData;
         this.context = context;
         this.inflater=LayoutInflater.from(context);
@@ -39,9 +40,9 @@ public class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
 
     @Override
     public void onBindViewHolder(LogViewHolder holder, int position) {
-        login_data data=listData.get(position);
-        holder.logDate.setText(data.getLoginDate());
-        holder.logDuration.setText(data.getDuration());
+        WorkdayData data=listData.get(position);
+        holder.logDate.setText(data.getPerformedDate());
+        holder.logDuration.setText(data.getDurationInM());
         if (holder.logDuration.getText().toString().equals("")){
             holder.logDuration.setText("On-going");
         }

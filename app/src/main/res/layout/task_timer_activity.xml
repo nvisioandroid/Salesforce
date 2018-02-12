@@ -5,31 +5,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:weightSum="3"
     android:orientation="vertical">
-
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeToolbar"
+        app:title="Task Timer"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:titleTextColor="@color/white"
+        app:popupTheme="@style/OverflowMenu"
+        android:id="@+id/toolbarTimer">
+    </android.support.v7.widget.Toolbar>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2"
         android:background="@drawable/background">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ACTIVITY DURATION"
-            android:textColor="@color/white"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="7dp"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_keyboard_backspace_white_24dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="10dp"
-            android:clickable="true"
-            android:id="@+id/activityToStart"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:id="@+id/imageAndDescriptionStamp">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="80dp"
@@ -341,18 +336,10 @@
             android:layout_marginLeft="20dp"
             android:id="@+id/startFinish"
             android:text="Start"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/white"
+            android:onClick="StartFinishClicked"
             android:layout_marginBottom="10dp"/>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:background="@drawable/login_btn"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:id="@+id/manual"
-            android:text="Manual Input"
-            android:textColor="@color/white"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"/>
+
     </RelativeLayout>
 </LinearLayout>

@@ -12,7 +12,7 @@ public class Utils {
     public static  FirebaseDatabase getmDatabase(){
         if (mDatabase==null){
             mDatabase=FirebaseDatabase.getInstance();
-            mDatabase.setPersistenceEnabled(true);
+            //mDatabase.setPersistenceEnabled(true);
         }
         return mDatabase;
     }

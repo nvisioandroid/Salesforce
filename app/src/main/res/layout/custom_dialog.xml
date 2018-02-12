@@ -43,7 +43,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="@color/btnColor"
-        android:text="Start job"
+        android:text="Done"
         android:textColor="@color/white"
         android:textSize="12sp" />
     <TextView

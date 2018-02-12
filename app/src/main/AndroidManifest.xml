@@ -25,7 +25,7 @@
         android:name=".application.MyApplication"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".ui.UserDefinedActivity"
+        <activity android:name=".ui.MapActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask">
             <intent-filter>
@@ -42,10 +42,10 @@
         <activity android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
-        <activity android:name=".StartWorkday"
+        <activity android:name=".StartTaskActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
-        <activity android:name=".ActivityTimeStamp"
+        <activity android:name=".TaskTimerActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity android:name=".AfterLogout"
@@ -59,7 +59,7 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
 
-        <activity android:name=".MapActivity"
+        <activity android:name=".ui.UserDefinedActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity android:name=".ui.LoginActivityNew"

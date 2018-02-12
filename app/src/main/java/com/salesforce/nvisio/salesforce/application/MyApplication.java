@@ -2,6 +2,8 @@ package com.salesforce.nvisio.salesforce.application;
 
 import android.app.Application;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import net.danlew.android.joda.JodaTimeAndroid;
 
 /**
@@ -14,5 +16,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         JodaTimeAndroid.init(this);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 }

@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.salesforce.nvisio.salesforce.Model.login_data;
 import com.salesforce.nvisio.salesforce.RecyclerViewAdapter.LogAdapter;
+import com.salesforce.nvisio.salesforce.database.WorkdayData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class ViewLogsActivity extends AppCompatActivity {
     private SharedPreferences settings;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private List<login_data> firstList,secondList;
+    private List<WorkdayData> firstList,secondList;
     private LogAdapter adapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class ViewLogsActivity extends AppCompatActivity {
                 firstList.clear();
                 for (DataSnapshot single: dataSnapshot.getChildren()){
                     login_data data=single.getValue(login_data.class);
-                    firstList.add(new login_data(data.getDuration(),data.getLogoutTime(),data.getLoginDate(),data.getLoginTime()));
+                    //firstList.add(new login_data(data.getDuration(),data.getLogoutTime(),data.getLoginDate(),data.getLoginTime()));
                 }
                 for (int i = firstList.size();i>0 ; i--) {
                     secondList.add(firstList.get(i-1));

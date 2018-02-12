@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/mainColor"
-        android:id="@+id/tool">
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_keyboard_backspace_white_24dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/mapToMain"
-            android:clickable="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Optimized Route Plan"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/mapToMain"
-            android:layout_marginLeft="10dp"/>
-
-    </RelativeLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeToolbar"
+        app:title="Optimized Map"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:titleTextColor="@color/white"
+        app:popupTheme="@style/OverflowMenu"
+        android:id="@+id/toolbarMap">
+    </android.support.v7.widget.Toolbar>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tool"
+        android:layout_below="@id/toolbarMap"
         android:id="@+id/progresContainer"
         >
         <ProgressBar
@@ -48,7 +37,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tool"
+        android:layout_below="@id/toolbarMap"
+
         android:id="@+id/mapContainer"
         android:visibility="invisible">
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
