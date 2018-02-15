@@ -25,7 +25,7 @@
         android:name=".application.MyApplication"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".ui.MapActivity"
+        <activity android:name=".ui.CreateLocationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask">
             <intent-filter>
@@ -54,7 +54,7 @@
         <activity android:name=".ViewLogsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
-        <activity android:name=".ui.CreateLocationActivity"
+        <activity android:name=".ui.MapActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>

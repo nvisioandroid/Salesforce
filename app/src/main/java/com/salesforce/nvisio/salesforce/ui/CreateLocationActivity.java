@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -43,6 +44,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.salesforce.nvisio.salesforce.Model.OutletInformation;
 import com.salesforce.nvisio.salesforce.R;
 import com.salesforce.nvisio.salesforce.utils.SharedPrefUtils;
@@ -69,7 +71,7 @@ public class CreateLocationActivity extends AppCompatActivity {
     private SharedPrefUtils sharedPrefUtils;
     private LatLng draggedLatLng;
     private String TAG = "logg>>";
-
+    private FusedLocationProviderClient client;
     @BindView(R.id.startLocationToolbar)
     Toolbar toolbar;
     @BindView(R.id.dragg_result)
@@ -88,11 +90,30 @@ public class CreateLocationActivity extends AppCompatActivity {
         setContentView(R.layout.start_location_map);
         ButterKnife.bind(this);
         init();
-        onMapReadyCallback=this::InitMap;
+        onMapReadyCallback = this::InitMap;
         mapInit();
+        requestPermission();
 
     }
 
+    private void requestPermission(){
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+    }
+    private void getCurrentLocation() {
+        client = LocationServices.getFusedLocationProviderClient(CreateLocationActivity.this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
+        client.getLastLocation().addOnSuccessListener(CreateLocationActivity.this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+            if (location!=null){
+                Log.d("curL>>","lat: "+location.getLatitude()+" long: "+location.getLongitude());
+            }
+            }
+        });
+    }
 
     private void init(){
         setSupportActionBar(toolbar);
@@ -210,8 +231,9 @@ public class CreateLocationActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.left_to_right_enter,R.anim.left_to_right_exit);
     }
     public void DoneClicked(View view) {
+        getCurrentLocation();
 
-        if (draggedLatLng!=null){
+       /* if (draggedLatLng!=null){
             OutletInformation outletInformation=new OutletInformation();
             outletInformation.setOutletName("Starting Location");
             outletInformation.setOutletLatitude(draggedLatLng.latitude);
@@ -225,7 +247,7 @@ public class CreateLocationActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(this, "No location has been chosen!", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
     /*public static void getAddressFromLocation(final double latitude, final double longitude,
                                               final Context context, final Handler handler) {
